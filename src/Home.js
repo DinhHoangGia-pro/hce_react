@@ -2,20 +2,26 @@ import { useState } from "react";
 
 const Home=()=>
 {
-     var tenlop="HCE 01 lap trinh ma nguon mo";
+     const tenlop="HCE 01 lap trinh ma nguon mo";
+     
      const vieccanlam1=['Viec 1', 'Viec 2', 'Viec 3', 'Viec 4'];
-     const [vieccanlam2, setVieccanlam]=useState(['Viec 1', 'Viec 2', 'Viec 3', 'Viec 4']);
 
+
+     var array2=[{id:1,hoten:"Nguyễn Văn A", lop:"221406" },
+                        {id:2,hoten:"Nguyễn Văn Bình", lop:"221406" },
+                        {id:3,hoten:"Nguyễn Văn Cường", lop:"221406" },
+                        {id:4,hoten:"Trần Thị D", lop:"221406" }];
+       
     return (
         <div>
-            <h1>{tenlop}</h1>
-            <p><h1>VIEC CAN LAM</h1></p>
+            
+            <p><h1>{tenlop}</h1></p>
             {
                 //Vong lap
-                vieccanlam1.map(x=>{
+                vieccanlam1.map(phantu=>{
                     return (
                         <p>
-                          <span>{x}</span> &nbsp;&nbsp;&nbsp;
+                          <span>{phantu}</span> &nbsp;&nbsp;&nbsp;
                           <input type="checkbox"/>
                         </p>
 
@@ -23,17 +29,24 @@ const Home=()=>
                     );
                 })
             
-             }
-                <p>-----------------</p>
+             } 
 
-            {
+             <p>________________________</p>  
+             {
+                array2.map(x=>{
+                    return(
+                        <p>
+                            <p>Ma sinh vien: {x.id}</p>
+                            <p>Ten sinh vien: {x.hoten}</p>
+                            <p>Lop: {x.lop}</p>
+                        </p>
+                    )
+                }
 
-                vieccanlam2.map(phantu=>{
-                    return (
-                        <p>{phantu}</p>
-                    );
-                })
-            }
+                )
+             }  
+
+             <p>________________________</p>         
 
 
             
@@ -42,7 +55,6 @@ const Home=()=>
 }
 
 
-  
 
 
 
