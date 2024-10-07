@@ -6,11 +6,23 @@ const Home=()=>
      
      const vieccanlam1=['Viec 1', 'Viec 2', 'Viec 3', 'Viec 4'];
 
+     const Themsv=()=>
+        {
+            const sinhvienmoi={id:5,hoten:"Cherry Nguyen", lop:"221406" };
+            array2=[...array2, sinhvienmoi];
+    
+        }
+
 
      var array2=[{id:1,hoten:"Nguyễn Văn A", lop:"221406" },
                         {id:2,hoten:"Nguyễn Văn Bình", lop:"221406" },
                         {id:3,hoten:"Nguyễn Văn Cường", lop:"221406" },
                         {id:4,hoten:"Trần Thị D", lop:"221406" }];
+        Themsv();
+
+    
+
+    
        
     return (
         <div>
