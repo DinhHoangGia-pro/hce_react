@@ -4,8 +4,7 @@ const Home=()=>
 {
      const tenlop="HCE 01 lap trinh ma nguon mo";
      
-     const vieccanlam1=['Viec 1', 'Viec 2', 'Viec 3', 'Viec 4'];
-
+     
      const Themsv=()=>
         {
             console.log("Test them sinh vien");
@@ -26,18 +25,48 @@ const Home=()=>
         
             }
 
+        const SuaSV=id=>
+        {
+            array2=array2.map(item=>{
+                if (item.id===id)
+                {
+                    item.hoten="Sinh vien Update";
+                }
+                return item;
+
+            }            
+
+            )
+        }
+
+        const SuaSV2=id=>
+            {
+               const newarray3=array3.map(item=>{
+                    if (item.id===id)
+                    {
+                        item.hoten="Sinh vien Update";
+                    }
+                    return item;
+    
+                }            
+    
+                );
+
+                setArray3(newarray3);
+            }
+
 
      var array2=[{id:1,hoten:"Nguyễn Văn A", lop:"221406" },
-                        {id:2,hoten:"Nguyễn Văn Bình", lop:"221406" },
-                        {id:3,hoten:"Nguyễn Văn Cường", lop:"221406" },
-                        {id:4,hoten:"Trần Thị D", lop:"221406" }];
+         {id:2,hoten:"Nguyễn Văn Bình", lop:"221406" },
+         {id:3,hoten:"Nguyễn Văn Cường", lop:"221406" },
+         {id:4,hoten:"Trần Thị D", lop:"221406" }];
         //Themsv();
 
     const [array3,setArray3]=useState([
         {id:1,hoten:"Nguyễn Văn A", lop:"221406" },
-                        {id:2,hoten:"Nguyễn Văn Bình", lop:"221406" },
-                        {id:3,hoten:"Nguyễn Văn Cường", lop:"221406" },
-                        {id:4,hoten:"Trần Thị D", lop:"221406" }
+        {id:2,hoten:"Nguyễn Văn Bình", lop:"221406" },
+        {id:3,hoten:"Nguyễn Văn Cường", lop:"221406" },
+        {id:4,hoten:"Trần Thị D", lop:"221406" }
 
     ]
 
@@ -49,29 +78,18 @@ const Home=()=>
         <div>
             
             <p><h1>{tenlop}</h1></p>
-            {
-                //Vong lap
-                vieccanlam1.map(phantu=>{
-                    return (
-                        <p>
-                          <span>{phantu}</span> &nbsp;&nbsp;&nbsp;
-                          <input type="checkbox"/>
-                        </p>
-
-                         
-                    );
-                })
             
-             } 
 
              <p>________________________</p>  
              {
                 array2.map(x=>{
                     return(
                         <p>
-                            <p>Ma sinh vien: {x.id}</p>
-                            <p>Ten sinh vien: {x.hoten}</p>
-                            <p>Lop: {x.lop}</p>
+                            <p>Ma sinh vien: {x.id}, Ten sinh vien: {x.hoten}, Lop: {x.lop} &nbsp; 
+                                <input type="button" value="Sua sinh vien" onClick={SuaSV.bind(this,x.id) } />
+                                
+                                </p>
+                            
                         </p>
                     )
                 }
@@ -81,16 +99,19 @@ const Home=()=>
 
              <p>________________________</p>   
 
-             <p><input type="button" value="Them sinh vien" onClick={Themsv.bind(this) } />   </p>      
+             <p><input type="button" value="Them sinh vien" onClick={Themsv.bind(this) } /> 
+             
+               </p>      
 
 
              {
                 array3.map(x=>{
                     return(
                         <p>
-                            <p>Ma sinh vien: {x.id}</p>
-                            <p>Ten sinh vien: {x.hoten}</p>
-                            <p>Lop: {x.lop}</p>
+                            <p>Ma sinh vien: {x.id}, Ten sinh vien: {x.hoten}, Lop: {x.lop} &nbsp;&nbsp;
+                            <input type="button" value="Sua sinh vien" onClick={SuaSV2.bind(this, x.id) } />
+                            </p>
+                            
                         </p>
                     )
                 }
