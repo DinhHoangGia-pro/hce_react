@@ -5,6 +5,8 @@ const ProductPage=()=>
     {
         const [listproduct, SetListProduct]=useState([]);/*Mới đầu cái mảng trong useState là rỗng*/
 
+       
+
         useEffect(()=>
             {
             
@@ -42,9 +44,16 @@ const ProductPage=()=>
 
 
                             <div class="product">
-                                <img src={phantu.image} alt="Sản phẩm 1"/>
+                                 <a href={"/product/"+phantu.id}>
+                                <img src={phantu.image} alt={phantu.title} /> {/* Hiển thị hình ảnh sản phẩm */}
+                            </a>
                                 <div class="product-info">
-                                    <h2 class="product-title">{phantu.title}</h2>
+                                    
+
+                                    <a href={"/product/"+phantu.id} class="product-title">
+                                    <h2 class="product-title">{phantu.title}</h2> {/* Hiển thị tiêu đề sản phẩm */}
+                                      </a>
+
                                     <p class="product-price">Giá: {phantu.price}$</p>
                                     <p class="product-description">{phantu.description}</p>
                                 </div>

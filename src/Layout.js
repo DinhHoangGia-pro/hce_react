@@ -41,7 +41,7 @@ const Layout=()=>
 </header>
 
 <div class="news-home">
-    <div class="container_main" style={{minHeight:500}} >
+    <div class="container_main" style={{minHeight:1000}} >
     <Outlet/>
     </div>
 </div>
